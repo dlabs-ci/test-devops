@@ -76,6 +76,11 @@ Flow: nginx ---> testserver
 
 Technical Setup
 ===============
+
+Requirements:
+- docker
+- docker-compose
+
 ### Docker on Linux:
 Add following entry to `/etc/hosts`:
 ```bash
