@@ -43,7 +43,9 @@ We use nginx as a loadbalancer so your task is to set it up best as you can. Ple
 Environment variables required by testserver are located in `.env` file. Consume `.env` file in `entrypoint.sh` and make environment variables available to testserver. If this is done right you will see `project` in response set to `testserver`.
 
 ### 4. Graceful shutdown
-Testserver supports graceful shutdown via SIGUSR1 signal. Make it work with docker-compose (stop, restart). 
+Testserver supports graceful shutdown via SIGUSR1 signal. Make it work with docker-compose (stop, restart). You can test signals by sending signal to the testserver container with `docker-compose kill -s SIGUSR1 testserver` and inspecting logs (if everything is done right you will see logs indicating a graceful shutdown). You will notice that sending a SIGUSR1 to container won't have any effect. App just won't pickup that signal. Why? Can you solve this?
+
+Hint: exec into the testserver container and inspect processes.
 
 ### 5. Docker images
 #### 5.1 Optimization
