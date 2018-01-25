@@ -1,6 +1,6 @@
 DevOPS Test
 ======================
-The Business of Fashion uses various tests to assess whether a candidate is best suited to the expectations of the role advertised and the offer given.
+D.Labs uses various tests to assess whether a candidate is best suited to the expectations of the role advertised and the offer given.
 
 This test aims to demonstrate your technical skills in practice: that you can deliver a solution which implements a scalable backend architecture, that produces the right results, and that pays attention to the requirement details.
 
