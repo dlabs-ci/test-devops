@@ -20,4 +20,7 @@ image:
 	@docker build -t dlabs/testserver:latest .
 
 certs:
-	@echo "Not implemented"
+	cfssl print-defaults csr | cfssl gencert -initca - | cfssljson -bare ./crt/ca
+	cfssl gencert -ca ./crt/ca.pem -ca-key ./crt/ca-key.pem csr-testserver.json | cfssljson -bare ./crt/testserver
+	cfssl gencert -ca ./crt/ca.pem -ca-key ./crt/ca-key.pem csr-user.json | cfssljson -bare ./crt/user
+	cfssl gencert -ca ./crt/ca.pem -ca-key ./crt/ca-key.pem csr-loadbalancer.json | cfssljson -bare ./crt/loadbalancer
