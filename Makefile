@@ -20,4 +20,4 @@ image:
 	@docker build -t dlabs/testserver:latest .
 
 certs:
-	@echo "Not implemented"
+	@openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /home/vagrant/test-devops/crt/testserver.lan.key -out /home/vagrant/test-devops/crt/testserver.lan.crt
